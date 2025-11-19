@@ -64,11 +64,18 @@ export default function ToDoList(){
                    type="text"
                    placeholder="Digite uma tarefa"
                    value={newTask}
-                   onChange={handleInputChange} 
+                   onChange={handleInputChange}
+                   onKeyDown={(event)=>{
+                        if(event.key == "Enter"){
+                            addTask();
+                        }
+                    }}
                 />
                 <button 
                     className="botao-add"
                     onClick={addTask}
+                    
+                    
                 >Adicionar</button>
                 </div>
                 <ol>
